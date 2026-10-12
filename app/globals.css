@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; background: #0A0D12; }
+body { background: #0A0D12; color: #fff; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
+
+@keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.1); } }
+.kenburns { animation: kenburns 30s ease-out forwards; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise .6s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .kenburns, .rise { animation: none; }
+  * { transition-duration: .01ms !important; }
+}
